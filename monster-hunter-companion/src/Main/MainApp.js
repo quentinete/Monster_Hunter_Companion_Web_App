@@ -8,6 +8,7 @@ import Home from '../Components/Home';
 import About from '../Components/About';
 import NotFound from '../Components/NotFound';
 import Users from '../Users/Users';
+import Equipment from '../Components/Equipment';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Equipment" element={<Equipment />} />
           <Route path="/main" element={<MainContent />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/About" element={<About />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/Users" element={<Users />} />
         </Routes>

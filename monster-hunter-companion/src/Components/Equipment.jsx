@@ -1,21 +1,13 @@
 import React from 'react';
-import '../Style//Header.css';
-import logo from '../Assets/logo_mhs.png';
 import { Link } from 'react-router-dom';
+import '../Style//Equipment.css';
 
-function Header() {
+function Equipment() {
   return (
-    <header>
-      <h1>
-        <img src={logo} alt="MONSTER HUNTER COMPANION" />
-      </h1>
-
       <nav>
-        <Link to="/about">ABOUT</Link>
-        <Link to="/news">NEWS</Link>
-        <Link to="/Monsters"><span>Monsters</span></Link>
-        <Link to="/Equipment"><span>Equipment</span></Link>
-
+        <Link to="/Weapons">Weapons</Link>
+        <Link to="/Armor">Armor</Link>
+        <Link to="/Talisman">Talisman</Link>
         <div className="lang-select">
           <form>
             <select name="langSel" defaultValue="/">
@@ -26,9 +18,7 @@ function Header() {
           </form>
         </div>
       </nav>
-    </header>
   );
 }
 
-export default Header;
-
+export default Equipment;
