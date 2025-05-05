@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 header {
@@ -18,3 +21,11 @@ nav ul li {
   margin-right: 15px;
 }
 
+.Body {
+  position: relativae;
+}
+footer {
+  margin-top:auto;
+  bottom: 0;
+  width: 100%;
+}
