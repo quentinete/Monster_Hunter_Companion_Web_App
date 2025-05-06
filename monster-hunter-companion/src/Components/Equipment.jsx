@@ -1,23 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../Style//Equipment.css';
+import React, { useState } from 'react';
+import { loadData, htmlDisplay } from '../utils/mhwApi';
 
 function Equipment() {
+  const [type, setType] = useState('monsters');
+  const [number, setNumber] = useState(5);
+  const [result, setResult] = useState('');
+  const [error, setError] = useState('');
+
+  const handleLoad = async () => {
+    setResult("<p>Chargement...</p>");
+    setError('');
+    try {
+      const data = await loadData(type, number);
+      setResult(htmlDisplay(data, type));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
-      <nav>
-        <Link to="/Weapons">Weapons</Link>
-        <Link to="/Armor">Armor</Link>
-        <Link to="/Talisman">Talisman</Link>
-        <div className="lang-select">
-          <form>
-            <select name="langSel" defaultValue="/">
-              <option value="blank">Select Language</option>
-              <option value="/">English</option>
-              <option value="/ja/">French</option>
-            </select>
-          </form>
-        </div>
-      </nav>
+    <div>
+      <label htmlFor="Select">Type :</label>
+      <select id="Select" value={type} onChange={(e) => setType(e.target.value)}>
+        <option value="monsters">Monstres</option>
+        <option value="weapons">Armes</option>
+        <option value="ailments">Ailments</option>
+        <option value="armor">Armor</option>
+        <option value="armor/sets">Armor Sets</option>
+        <option value="decorations">Decorations</option>
+        <option value="events">Events</option>
+        <option value="charms">Charms</option>
+        <option value="items">Items</option>
+        <option value="locations">Locations</option>
+        <option value="motion-values">Motion Values</option>
+        <option value="skills">Skills</option>
+      </select>
+
+      <label htmlFor="NumWanted">Nombre :</label>
+      <input type="number" id="NumWanted" value={number} min="1" onChange={(e) => setNumber(Number(e.target.value))} />
+
+      <button onClick={handleLoad}>Charger</button>
+
+      <div id="result" dangerouslySetInnerHTML={{ __html: result }} />
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
   );
 }
 
