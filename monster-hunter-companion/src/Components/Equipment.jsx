@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { loadData, htmlDisplay } from '../utils/mhwApi';
+import { loadData, htmlDisplay } from './mhwApi';
 
 function Equipment() {
   const [type, setType] = useState('monsters');
