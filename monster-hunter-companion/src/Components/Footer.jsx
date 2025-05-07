@@ -13,9 +13,9 @@ function Footer() {
         </div>
 
         <div id="footer-leg" className="footer-section links">
-          <h4>Liens utiles</h4>
-          <a href="/mentions-legales">Mentions légales</a>
-          <a href="/politique-confidentialite">Politique de confidentialité</a>
+          <h4>Useful links</h4>
+          <a href="/mentions-legales">Legal notices</a>
+          <a href="/politique-confidentialite">Privacy Policy</a>
         </div>
 
         <div id="footer-leg" className="footer-section socials">
@@ -30,7 +30,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 Mon Site. Tous droits réservés.</p>
+        <p>© 2025 My Site. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { loadData, htmlDisplay } from './mhwApi';
+import '../Style/Equipment.css';
 
 function Equipment() {
   const [type, setType] = useState('monsters');
@@ -39,7 +40,7 @@ function Equipment() {
       <label htmlFor="NumWanted">Nombre :</label>
       <input type="number" id="NumWanted" value={number} min="1" onChange={(e) => setNumber(Number(e.target.value))} />
 
-      <button onClick={handleLoad}>Charger</button>
+      <button onClick={handleLoad}>Charge</button>
 
       <div id="result" dangerouslySetInnerHTML={{ __html: result }} />
       {error && <p style={{ color: 'red' }}>{error}</p>}
