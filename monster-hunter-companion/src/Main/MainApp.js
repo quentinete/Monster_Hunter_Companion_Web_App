@@ -6,9 +6,10 @@ import MainContent from '../Components/MainContent';
 import Footer from '../Components/Footer';
 import Home from '../Components/Home';
 import About from '../Components/About';
+import Monsters from '../Components/Monsters';
 import NotFound from '../Components/NotFound';
 import Users from '../Users/Users';
-import Equipment from '../Components/Equipment';
+import API_R from '../Components/API_R';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <div className='Body'>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Equipment" element={<Equipment />} />
+            <Route path="/Monsters" element={<Monsters />} />
+            <Route path="/API_R" element={<API_R />} />
             <Route path="/main" element={<MainContent />} />
             <Route path="/About" element={<About />} />
             <Route path="*" element={<NotFound />} />

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { loadData, htmlDisplay } from './mhwApi';
-import '../Style/Equipment.css';
+import '../Style/API_R.css';
 
-function Equipment() {
+function API_R() {
   const [type, setType] = useState('monsters');
   const [number, setNumber] = useState(5);
   const [result, setResult] = useState('');
@@ -48,4 +48,4 @@ function Equipment() {
   );
 }
 
-export default Equipment;
+export default API_R;

@@ -1,3 +1,23 @@
-export default function Home() {
-    return <h1>Accueil</h1>;
-  }
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../Style/Home.css';
+
+function Home() {
+  return (
+    <div className="home-container">
+      <h1 className="home-title">Welcome to Monster Hunter Companion</h1>
+      <p className="home-subtitle">
+        Explore the world of Monster Hunter World with our app.
+      </p>
+
+      <div className="home-buttons">
+        <Link to="/monsters" className="home-link">🧟Monsters</Link>
+        <Link to="/weapons" className="home-link">🗡️ Weapons</Link>
+        <Link to="/armor" className="home-link">🛡️ Armors</Link>
+        <Link to="/talisman" className="home-link">🔮 Talismans</Link>
+      </div>
+    </div>
+  );
+}
+
+export default Home;

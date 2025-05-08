@@ -11,10 +11,11 @@ function Header() {
       </h1>
 
       <nav>
+        <Link to="/">Home</Link>
         <Link to="/about">ABOUT</Link>
         <Link to="/news">NEWS</Link>
         <Link to="/Monsters"><span>Monsters</span></Link>
-        <Link to="/Equipment"><span>Equipment</span></Link>
+        <Link to="/API_R"><span>API_R</span></Link>
 
         <div className="lang-select">
           <form>
