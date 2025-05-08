@@ -11,10 +11,10 @@ function Home() {
       </p>
 
       <div className="home-buttons">
-        <Link to="/monsters" className="home-link">🧟Monsters</Link>
-        <Link to="/weapons" className="home-link">🗡️ Weapons</Link>
-        <Link to="/armor" className="home-link">🛡️ Armors</Link>
-        <Link to="/talisman" className="home-link">🔮 Talismans</Link>
+        <Link to="/Monsters" className="home-link">🧟Monsters</Link>
+        <Link to="/Weapons" className="home-link">🗡️ Weapons</Link>
+        <Link to="/Armors" className="home-link">🛡️ Armors</Link>
+        <Link to="/Talismans" className="home-link">🔮 Talismans</Link>
       </div>
     </div>
   );
