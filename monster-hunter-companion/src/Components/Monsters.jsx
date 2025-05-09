@@ -10,7 +10,7 @@ function Monsters() {
   useEffect(() => {
     fetch('https://mhw-db.com/monsters')
       .then(res => {
-        if (!res.ok) throw new Error('Erreur de chargement des monstres');
+        if (!res.ok) throw new Error('Monster loading error');
         return res.json();
       })
       .then(data => setMonsters(data))
