@@ -2,10 +2,12 @@
     padding: 2rem;
     text-align: center;
     color: #fff;
-    background: linear-gradient(to bottom, #1f1f1f, #3a3a3a);
+    background-image: url('../Assets/cj97pz5etjy21.webp');
     min-height: calc(100vh - 120px);
+    background-size: cover;
+    background-position: center;
   }
-  
+
   .home-title {
     font-size: 3rem;
     margin-bottom: 1rem;

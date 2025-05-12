@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Style//Header.css';
-import logo from '../Assets/logo_mhs.png';
+import logo from '../Assets/Logo/logo_mhs.png';
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -13,8 +13,8 @@ function Header() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/about">ABOUT</Link>
-        <Link to="/news">NEWS</Link>
-        <Link to="/Monsters"><span>Monsters</span></Link>
+        <Link to="/News">NEWS</Link>
+        <Link to="/Monsters"><span>MONSTERS</span></Link>
         <Link to="/API_R"><span>API_R</span></Link>
 
         <div className="lang-select">
