@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../Style/Monsters.css';
+import { loadData } from './mhwApi.js';
+
 
 function Monsters() {
   const [monsters, setMonsters] = useState([]);
@@ -7,15 +9,20 @@ function Monsters() {
   const [sortOrder, setSortOrder] = useState('asc');
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    fetch('https://mhw-db.com/monsters')
-      .then(res => {
-        if (!res.ok) throw new Error('Monster loading error');
-        return res.json();
-      })
-      .then(data => setMonsters(data))
-      .catch(err => setError(err.message));
+useEffect(() => {
+    async function fetchMonsters() {
+      try {
+        const data = await loadData('monsters', 50);
+        setMonsters(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    }
+
+    fetchMonsters();
   }, []);
+
+  
 
   const Order = () => {
     setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc'));

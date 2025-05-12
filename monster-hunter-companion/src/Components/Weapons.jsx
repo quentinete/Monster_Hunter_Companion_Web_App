@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Style/Weapons.css';
+import { loadData } from './mhwApi.js';
 
 function Weapons() {
   const [weapons, setWeapons] = useState([]);
@@ -8,14 +9,17 @@ function Weapons() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('https://mhw-db.com/weapons')
-      .then(res => {
-        if (!res.ok) throw new Error('Erreur de chargement des armes');
-        return res.json();
-      })
-      .then(data => setWeapons(data))
-      .catch(err => setError(err.message));
-  }, []);
+      async function fetchWeapons() {
+        try {
+          const data = await loadData('weapons', 50);
+          setWeapons(data);
+        } catch (err) {
+          setError(err.message);
+        }
+      }
+  
+      fetchWeapons();
+    }, []);
 
   const Order = () => {
     setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc'));

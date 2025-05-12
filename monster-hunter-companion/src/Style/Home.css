@@ -8,6 +8,13 @@
     background-position: center;
   }
 
+  .home-Text {
+      padding: 3rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border-radius: 1rem;
+  }
+
   .home-title {
     font-size: 3rem;
     margin-bottom: 1rem;

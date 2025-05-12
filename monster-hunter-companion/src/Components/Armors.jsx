@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Style/Armors.css';
+import { loadData } from './mhwApi.js';
 
 function Armors() {
   const [armors, setArmors] = useState([]);
@@ -8,14 +9,17 @@ function Armors() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('https://mhw-db.com/armor')
-      .then(res => {
-        if (!res.ok) throw new Error('Erreur de chargement des armures');
-        return res.json();
-      })
-      .then(data => setArmors(data))
-      .catch(err => setError(err.message));
-  }, []);
+      async function fetchArmors() {
+        try {
+          const data = await loadData('armor', 50);
+          setArmors(data);
+        } catch (err) {
+          setError(err.message);
+        }
+      }
+  
+      fetchArmors();
+    }, []);
 
   const Order = () => {
     setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc'));
