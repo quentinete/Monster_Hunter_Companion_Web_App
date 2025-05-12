@@ -13,6 +13,7 @@ import API_R from '../Components/API_R';
 import Armors from '../Components/Armors';
 import Weapons from '../Components/Weapons';
 import News from '../Components/News';
+import Carrousel from '../Components/Carousel';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/Monsters" element={<Monsters />} />
             <Route path="/API_R" element={<API_R />} />
             <Route path="/Weapons" element={<Weapons />} />
+            <Route path="/Carrousel" element={<Carrousel />} />
             <Route path="/Armors" element={<Armors />} />
             <Route path="/News" element={<News />} />
             <Route path="/main" element={<MainContent />} />
